@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# debugging nginx port 80
+# I solved this task by first checking that the servers were running
+# I checked the logs, status and configuration file
+# After much hassle decided to create a symbolic link for the default file as seen below
+# -sf flags creates a symbolic link and overwrites any existing file with the same name as the link
+# The system was then restarted.
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
