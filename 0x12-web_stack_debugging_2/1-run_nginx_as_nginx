@@ -1,13 +1,6 @@
-#!/bin/bash
-
-# Stop the Nginx service if it's already running
-sudo systemctl stop nginx
-
-# Update the Nginx configuration to run as the nginx user
-sudo sed -i 's/user\s*[^;]*;/user nginx;/' /etc/nginx/nginx.conf
-
-# Update the Nginx configuration to listen on all active IPs on port 8080
-sudo sed -i 's/listen\s*[^:]*:/listen 8080;/' /etc/nginx/nginx.conf
-
-# Start the Nginx service
-sudo systemctl start nginx
+#!/usr/bin/env bash
+# Starts nginx as user nginx on port 8080
+chmod 777 /etc/nginx/nginx.conf
+pkill apache2
+sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+sudo -u nginx service nginx start
