@@ -3,4 +3,6 @@
 chmod 777 /etc/nginx/nginx.conf
 pkill apache2
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+# Create the "nginx" user by running the following command:
+sudo adduser --system --no-create-home --disabled-login --group nginx
 sudo -u nginx service nginx start
