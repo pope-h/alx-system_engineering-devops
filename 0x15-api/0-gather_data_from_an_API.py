@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """ Script that uses JSONPlaceholder API to get information about employee """
-from sys import argv
 import requests
+from sys import argv
+
 
 def get_employee_todo_progress(employee_id):
     base_url = "https://jsonplaceholder.typicode.com"
@@ -20,11 +21,13 @@ def get_employee_todo_progress(employee_id):
     total_task = len(todo_data)
     done_task = sum(task["completed"] for task in todo_data)
 
-    print(f"Employee {employee_name} is done with tasks ({done_task}/{total_task}):")
+    print(f"Employee {employee_name} is done\
+          with tasks ({done_task}/{total_task}):")
     for task in todo_data:
         if task["completed"]:
             print(f"\t{task['title']}")
-    
+
+
 if __name__ == "__main__":
     employee_id = int(argv[1])
     get_employee_todo_progress(employee_id)
