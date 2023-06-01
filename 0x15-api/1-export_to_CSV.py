@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script that uses JSONPlaceholder API to get information about employee & exports to CSV"""
+""" Script that exports employee information to CSV"""
 
 if __name__ == "__main__":
     import csv
@@ -11,14 +11,16 @@ if __name__ == "__main__":
                      .format(employee_ID))
     employee_name = r.json().get('username')
     r = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
-                    .format(employee_ID))
+                     .format(employee_ID))
     tasks = r.json()
 
     file_name = "{}.csv".format(employee_ID)
     with open(file_name, mode='w', newline='') as file:
         writer = csv.writer(file, quotechar='"', quoting=csv.QUOTE_ALL)
-        writer.writerow(["USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"])
+        writer.writerow(["USER_ID", "USERNAME",
+                         "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         for task in tasks:
             task_title = task["title"]
             task_completed = task["completed"]
-            writer.writerow([employee_ID, employee_name, task_completed, task_title])
+            writer.writerow([employee_ID, employee_name,
+                             task_completed, task_title])
