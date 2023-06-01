@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-""" a script that exports data in the CSV format """
+""" Script that exports employee information to CSV"""
 
 if __name__ == "__main__":
-    """ a script that exports data in the CSV format """
-
     import requests
     from sys import argv
 
@@ -11,13 +9,14 @@ if __name__ == "__main__":
     r = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                      .format(employee_ID))
     employee_name = r.json().get('username')
-
-    r = requests.get('https://jsonplaceholder.typicode.com/todos')
+    r = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
+                     .format(employee_ID))
     tasks = r.json()
     all_tasks = [item for item in tasks if item.get('userId') == employee_ID]
 
-    with open('{}.csv'.format(employee_ID), 'w+') as f:
-        for item in all_tasks:
-            f.write('"{}","{}","{}","{}"\n'.format(employee_ID, employee_name,
-                                                   item.get('completed'),
-                                                   item.get('title')))
+    file_name = "{}.csv".format(employee_ID)
+    with open(file_name, mode='w+') as file:
+        for task in all_tasks:
+            file.write('"{}","{}","{}","{}"\n'.format(employee_ID, employee_name,
+                                                      task.get('completed'),
+                                                      task.get('title')))
