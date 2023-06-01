@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Script that uses JSONPlaceholder API to get information about an employee"""
 import requests
 from sys import argv
@@ -21,7 +20,8 @@ def get_employee_todo_progress(employee_id):
     total_tasks = len(todo_data)
     done_tasks = sum(task["completed"] for task in todo_data)
 
-    print(f"Employee {employee_name} is done with tasks ({done_tasks}/{total_tasks}):")
+    print(f"Employee {employee_name} is done with\
+          tasks ({done_tasks}/{total_tasks}):")
     for task in todo_data:
         if task["completed"]:
             print(f"\t{task['title']}")
