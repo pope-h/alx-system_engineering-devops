@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Script that uses JSONPlaceholder API to get information about an employee"""
+"""
+Script that uses JSONPlaceholder API
+to get information about an employee
+"""
 import requests
 from sys import argv
 
