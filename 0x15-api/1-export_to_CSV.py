@@ -17,6 +17,7 @@ if __name__ == "__main__":
     file_name = "{}.csv".format(employee_ID)
     with open(file_name, mode='w+') as file:
         for task in all_tasks:
-            file.write('"{}","{}","{}","{}"\n'.format(employee_ID, employee_name,
+            file.write('"{}","{}","{}","{}"\n'.format(employee_ID,
+                                                      employee_name,
                                                       task.get('completed'),
                                                       task.get('title')))
