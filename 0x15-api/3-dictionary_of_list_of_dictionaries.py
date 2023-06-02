@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""script to save & export data in JSON format"""
 
 if __name__ == "__main__":
     import json
