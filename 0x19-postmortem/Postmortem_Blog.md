@@ -1,6 +1,6 @@
 # Postmortem Report
 
-![They never stop coming](non_stop.gif)
+							![They never stop coming](non_stop.gif)
 
 ## Issue Summary:
 
@@ -17,7 +17,7 @@ I escalated the issue to mentors who confirmed the server's irreparability, resu
 During the server restoration process from May 23-28, 2023, I encountered challenges while installing the correct version of MySQL, causing extended downtime.
 The issue was ultimately resolved on May 28, 2023, when I completely removed MySQL version 8 and successfully installed the appropriate version on web server 02.
 
-![No idea what i'm doing](no_idea.gif)
+							![No idea what i'm doing](no_idea.gif)
 
 ## Root Cause and Resolution:
 
@@ -33,4 +33,4 @@ To prevent similar incidents in the future, the following measures have been imp
        	+ Implementing proper monitoring and alerting mechanisms to detect and address issues promptly.
        	+ Conducting regular system audits and reviewing best practices for system administration and troubleshooting.
 
-![Bugs ain't that bad! Are they?](truce.gif)
+							![Let's call it a truce](truce.gif)
