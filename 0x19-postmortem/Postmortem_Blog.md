@@ -14,8 +14,8 @@ The issue was detected on May 20, 2023, around 10 AM UTC when I encountered the 
 I initially attempted to resolve the issue through basic methods such as restarting my Linux environment and checking other servers, but these did not succeed.
 Seeking help online, including from search engines and chat platforms, provided misleading information and pointed me to contact the administrators.
 I escalated the issue to mentors who confirmed the server's irreparability, resulting in the need to request a new server.
-During the server restoration process from May 23-28, 2023, I encountered challenges while installing the correct version of MySQL, causing extended downtime.
-The issue was ultimately resolved on May 28, 2023, when I completely removed MySQL version 8 and successfully installed the appropriate version on web server 02.
+During the server restoration process from May 20-23, 2023, I encountered challenges while installing the correct version of MySQL, causing extended downtime.
+The issue was ultimately resolved on May 23, 2023, when I completely removed MySQL version 8 and successfully installed the appropriate version on web server 02.
 
 ![No idea what i'm doing](no_idea.gif)
 
