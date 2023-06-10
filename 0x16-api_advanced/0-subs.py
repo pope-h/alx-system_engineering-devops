@@ -11,7 +11,7 @@ Retrieves the number of subscribers in a given subreddit.
 '''
 def number_of_subscribers(subreddit):
     headers = {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
         'User-Agent': ' '.join([
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
             'AppleWebKit/537.36 (KHTML, like Gecko)',
@@ -21,7 +21,7 @@ def number_of_subscribers(subreddit):
         ])
     }
     response = requests.get(
-        '{}/r/{}/.json'.format(BASE_URL, subreddit),
+        '{}/r/{}/about.json'.format(BASE_URL, subreddit),
         headers=headers,
         allow_redirects=False
     )
