@@ -33,4 +33,4 @@ To prevent similar incidents in the future, the following measures have been imp
        	+ Implementing proper monitoring and alerting mechanisms to detect and address issues promptly.
        	+ Conducting regular system audits and reviewing best practices for system administration and troubleshooting.
 
-![No idea what i'm doing](no_idea.gif)
+![Bugs ain't that bad! Are they?](truce.gif)
