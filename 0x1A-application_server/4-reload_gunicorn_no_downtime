@@ -11,6 +11,6 @@ if [ -z "$PID" ]; then
 fi
 
 # Send a graceful reload signal to the Gunicorn master process
-kill -HUP $PID
+kill -HUP "$PID"
 
 echo "Gunicorn reloaded gracefully."
