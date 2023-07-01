@@ -5,12 +5,12 @@
 PID=$(pgrep gunicorn)
 
 # Check if Gunicorn is running
-if [ -z "$PID" ]; then
+if [[ -z "$PID" ]]; then
   echo "Gunicorn is not running."
   exit 1
 fi
 
 # Send a graceful reload signal to the Gunicorn master process
-sudo kill -HUP "$PID"
+kill -HUP "$PID"
 
 echo "Gunicorn reloaded gracefully."
