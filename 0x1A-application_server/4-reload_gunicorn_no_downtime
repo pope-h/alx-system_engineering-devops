@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 # No service interruption
-pkill -HUP gunicorn
+
+# Get the process ID (PID) of the Gunicorn master process
+PID=$(pgrep gunicorn)
+
+# Check if Gunicorn is running
+if [ -z "$PID" ]; then
+  echo "Gunicorn is not running."
+  exit 1
+fi
+
+# Send a graceful reload signal to the Gunicorn master process
+kill -HUP $PID
+
+echo "Gunicorn reloaded gracefully."
